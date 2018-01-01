@@ -4,8 +4,7 @@ dic = {}
 while t>0:
     n = int(stdin.readline())
     arr_ele = stdin.readline().split()
-    for y in range(n):
-            dic[arr_ele[y]] = y
+    dic = {arr_ele[y]:y for y in range(n)}
     q = int(stdin.readline())
     for i in range(q):
         x = stdin.readline().split()
