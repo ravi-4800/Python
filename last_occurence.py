@@ -1,17 +1,13 @@
-from sys import stdin,stdout
-t = int(stdin.readline())
-dic = {}
+t = int(input())
 while t>0:
-    n = int(stdin.readline())
-    arr_ele = stdin.readline().split()
-    for y in range(n):
-        dic[arr_ele[y]] = y
-    q = int(stdin.readline())
+    n = int(input())
+    arr_ele = input().split(' ')
+    q = int(input())
     for i in range(q):
-        x = stdin.readline().split()
-        if x[0] not in dic:
+        x = input()
+    
+        if x not in arr_ele:
             print(-1)
         else:
-            print(dic[x[0]]+1)
+            print(max([arr_ele.index(i) for i in arr_ele if i == x])+1)
     t=t-1
-        
