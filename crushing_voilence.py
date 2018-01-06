@@ -37,15 +37,20 @@ while t>0:
     max_beatings = max(max_boys_beatings,max_girls_beatings)
 
     temp = 0
-    for i in boys:
-        if i != girls[boys[i]]:
-            if girls[boys[girls[boys[i]]]] == i:
-                temp = temp + 1
+    for i in boys_beating:
+        try:
+            if i == boys_beating[boys_beating[i]]:
+                temp = temp+1
+        except KeyError:
+            continue
 
-    for i in girls:
-        if i != boys[girls[i]]:
-            if boys[girls[boys[girls[i]]]] == i:
-                temp = temp + 1
+    for i in girls_beating:
+        try:
+            if i == girls_beating[girls_beating[i]]:
+                temp = temp+1
+        except KeyError:
+            continue
+            
 
     print("{} {}".format(max_beatings,temp//2))   
     t=t-1
