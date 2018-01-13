@@ -15,7 +15,7 @@ if temp == len(s)//2:
 else:
     print("String is not palindrome")
 
-## using reverse string
+#### using reverse string
 p = input("Enter a string: ")
 if (p == p[::-1]):
     print("String is palindrome")
